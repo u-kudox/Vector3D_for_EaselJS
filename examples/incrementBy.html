@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>incrementBy | Vector3D for EaselJS</title>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+<script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
+<script type="text/javascript" src="js/vector3d-1.0.0.min.js"></script>
+<script type="text/javascript">
+
+var _canvas;
+var _stage;
+
+function init(canvasID) {
+	_canvas = document.getElementById(canvasID);
+	_stage = new createjs.Stage(_canvas);
+	test();
+}
+
+function test() {
+	var v1 = new createjs.Vector3D(10, 10, 10);
+	var v2 = new createjs.Vector3D(1, 2, 3);
+	v1.incrementBy(v2);
+	console.log(v1.toString()); // [Vector3D (x=11 y=12 z=13)]
+}
+
+window.addEventListener("load", function loadHandler(evt) {
+	window.removeEventListener("load", loadHandler, false);
+	init("my-canvas");
+}, false);
+
+</script>
+</head>
+<body>
+
+<canvas id="my-canvas" width="640" height="360"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>normalize | Vector3D for EaselJS</title>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+<script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
+<script type="text/javascript" src="js/vector3d-1.0.0.min.js"></script>
+<script type="text/javascript">
+
+var _canvas;
+var _stage;
+
+function init(canvasID) {
+	_canvas = document.getElementById(canvasID);
+	_stage = new createjs.Stage(_canvas);
+	test();
+}
+
+function test() {
+	var v1 = new createjs.Vector3D(100, -50, 10);
+	var length = v1.normalize();
+	console.log(length); // 112.24972160321825
+	console.log(v1.toString()); // [Vector3D (x=0.8908708063747479 y=-0.44543540318737396 z=0.0890870806374748)]
+}
+
+window.addEventListener("load", function loadHandler(evt) {
+	window.removeEventListener("load", loadHandler, false);
+	init("my-canvas");
+}, false);
+
+</script>
+</head>
+<body>
+
+<canvas id="my-canvas" width="640" height="360"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+	margin:0;
+	padding:0;
+	background-color:#eeeeee;
+}
+
+#my-canvas {
+	display:block;
+	color:#666666;
+	background-color:#000000;
+	font-size:100%;
+	border:1px solid #cccccc;
+	margin:20px auto 0px;
+	padding:0px;
+}
