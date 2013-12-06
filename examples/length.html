@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>setTo | Vector3D for EaselJS</title>
+<title>length | Vector3D for EaselJS</title>
 <link rel="stylesheet" type="text/css" href="css/index.css" media="all">
 <script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
 <script type="text/javascript" src="js/vector3d-1.1.0.min.js"></script>
@@ -18,9 +18,8 @@ function init(canvasID) {
 }
 
 function test() {
-	var v1 = new createjs.Vector3D();
-	v1.setTo(25, -50, 100);
-	console.log(v1.toString()); // [Vector3D (x=25 y=-50 z=100)]
+	var v1 = new createjs.Vector3D(10, 10, 10);
+	console.log(v1.length); // 17.320508075688775
 }
 
 window.addEventListener("load", function loadHandler(evt) {

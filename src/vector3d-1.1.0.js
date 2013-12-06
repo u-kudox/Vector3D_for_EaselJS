@@ -1,6 +1,6 @@
 /**
  * Vector3D for EaselJS
- * Version: 1.00
+ * Version: 1.10
  * Contact and bug reports : http://kudox.jp/contact or http://twitter.com/u_kudox
  * License : public domain
  **/
@@ -8,6 +8,7 @@
 this.createjs = this.createjs || {};
 
 (function(window) {
+	"use strict";
 
 	function Vector3D(x, y, z, w) {
 		this.x = x || 0;
@@ -16,21 +17,33 @@ this.createjs = this.createjs || {};
 		this.w = w || 0;
 	}
 
-	Vector3D.X_AXIS = new Vector3D(1, 0, 0);
-	Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
-	Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
+	var p = Vector3D.prototype = {
+		get length() {
+			return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+		},
 
-	var p = Vector3D.prototype;
+		get lengthSquared() {
+			return this.x * this.x + this.y * this.y + this.z * this.z;
+		}
+	};
+
+	p.constructor = Vector3D;
 
 	p.x;
 	p.y;
 	p.z;
 	p.w;
 
+	/**
+	* @deprecated Use `length` instead.
+	**/
 	p.getLength = function() {
 		return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 	};
 
+	/**
+	* @deprecated Use `lengthSquared` instead.
+	**/
 	p.getLengthSquared = function() {
 		return this.x * this.x + this.y * this.y + this.z * this.z;
 	};
@@ -97,7 +110,7 @@ this.createjs = this.createjs || {};
 	};
 
 	p.normalize = function() {
-		var length = this.getLength();
+		var length = this.length;
 		if (length !== 0) {
 			this.x /= length;
 			this.y /= length;
@@ -134,12 +147,16 @@ this.createjs = this.createjs || {};
 		return "[Vector3D (x=" + this.x + " y=" + this.y + " z=" + this.z + ")]";
 	};
 
+	Vector3D.X_AXIS = new Vector3D(1, 0, 0);
+	Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
+	Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
+
 	Vector3D.distance = function(pt1, pt2) {
 		return Math.sqrt(Math.pow(pt2.x - pt1.x, 2) + Math.pow(pt2.y - pt1.y, 2) + Math.pow(pt2.z - pt1.z, 2));
 	};
 
 	Vector3D.angleBetween = function(a, b) {
-		var cos = a.dotProduct(b) / (a.getLength() * b.getLength());
+		var cos = a.dotProduct(b) / (a.length * b.length);
 		if (1 < cos) return 0;
 		if (cos < -1) return Math.PI;
 		return Math.acos(cos);
