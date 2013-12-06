@@ -1,3 +1,18 @@
+ver 1.1.0 [Dec 6, 2013]
+**********************************************************************************
+- implemented "use strict" mode
+- added length (getter)
+- added lengthSquared (getter)
+
+*****
+DEPRECATED (will be removed in a future version):
+- getLength()
+  use `length` instead.
+- getLengthSquared()
+  use `lengthSquared` instead.
+
+
+
 ver 1.0.0 [Jan 21, 2013]
 **********************************************************************************
 Initial release.
