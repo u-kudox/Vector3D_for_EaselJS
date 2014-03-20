@@ -1,0 +1,23 @@
+{
+  "name": "Vector3D_for_EaselJS",
+  "version": "1.1.0",
+  "description": "Vector3D for EaselJS adds AS3 like Vector3D class to EaselJS.",
+  "url": "http://kudox.jp/java-script/createjs-easeljs-vector3d",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://u-kudox@github.com/u-kudox/Vector3D_for_EaselJS.git"
+  },
+  "author": "@u_kudox",
+  "license": "public domain",
+  "bugs": {
+    "url": "https://github.com/u-kudox/Vector3D_for_EaselJS/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-clean": "~0.5.0"
+  }
+}
