@@ -25,6 +25,16 @@ module.exports = function(grunt) {
 			vector3d : {
 				src : ['lib/vector3d-*.js', 'examples/js/vector3d-*.js']
 			}
+		},
+		replace : {
+			vector3d : {
+				src : ['examples/*.html'],
+				overwrite : true,
+				replacements : [{
+					from : /js\/vector3d-.+min\.js/,
+					to : 'js/vector3d-<%= pkg.version %>.min.js'
+				}]
+			}
 		}
 	});
 
@@ -32,6 +42,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-text-replace');
 
-	grunt.registerTask('vector3d', ['clean:vector3d', 'uglify:vector3d', 'copy:vector3d']);
+	grunt.registerTask('vector3d', ['clean:vector3d', 'uglify:vector3d', 'copy:vector3d', 'replace:vector3d']);
 };
