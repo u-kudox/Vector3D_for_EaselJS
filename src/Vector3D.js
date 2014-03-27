@@ -42,20 +42,6 @@ this.createjs = this.createjs || {};
 	p.z;
 	p.w;
 
-	/**
-	* @deprecated Use `length` instead.
-	**/
-	p.getLength = function() {
-		return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
-	};
-
-	/**
-	* @deprecated Use `lengthSquared` instead.
-	**/
-	p.getLengthSquared = function() {
-		return this.x * this.x + this.y * this.y + this.z * this.z;
-	};
-
 	p.add = function(a) {
 		return new Vector3D(this.x + a.x, this.y + a.y, this.z + a.z);
 	};
