@@ -17,13 +17,21 @@ this.createjs = this.createjs || {};
 		this.w = w || 0;
 	}
 
+	var s = Vector3D;
+
 	var p = Vector3D.prototype = {
 		get length() {
-			return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+			var x = this.x;
+			var y = this.y;
+			var z = this.z;
+			return Math.sqrt(x * x + y * y + z * z);
 		},
 
 		get lengthSquared() {
-			return this.x * this.x + this.y * this.y + this.z * this.z;
+			var x = this.x;
+			var y = this.y;
+			var z = this.z;
+			return x * x + y * y + z * z;
 		}
 	};
 
@@ -124,7 +132,13 @@ this.createjs = this.createjs || {};
 	};
 
 	p.crossProduct = function(a) {
-		return new Vector3D(this.y * a.z - this.z * a.y, this.z * a.x - this.x * a.z, this.x * a.y - this.y * a.x, 1);
+		var x = this.x;
+		var y = this.y;
+		var z = this.z;
+		var ax = a.x;
+		var ay = a.y;
+		var az = a.z;
+		return new Vector3D(y * az - z * ay, z * ax - x * az, x * ay - y * ax, 1);
 	};
 
 	p.setTo = function(xa, ya, za) {
@@ -147,15 +161,15 @@ this.createjs = this.createjs || {};
 		return "[Vector3D (x=" + this.x + " y=" + this.y + " z=" + this.z + ")]";
 	};
 
-	Vector3D.X_AXIS = new Vector3D(1, 0, 0);
-	Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
-	Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
+	s.X_AXIS = new Vector3D(1, 0, 0);
+	s.Y_AXIS = new Vector3D(0, 1, 0);
+	s.Z_AXIS = new Vector3D(0, 0, 1);
 
-	Vector3D.distance = function(pt1, pt2) {
+	s.distance = function(pt1, pt2) {
 		return Math.sqrt(Math.pow(pt2.x - pt1.x, 2) + Math.pow(pt2.y - pt1.y, 2) + Math.pow(pt2.z - pt1.z, 2));
 	};
 
-	Vector3D.angleBetween = function(a, b) {
+	s.angleBetween = function(a, b) {
 		var cos = a.dotProduct(b) / (a.length * b.length);
 		if (1 < cos) return 0;
 		if (cos < -1) return Math.PI;
