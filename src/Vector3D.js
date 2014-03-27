@@ -1,6 +1,6 @@
 /**
  * Vector3D for EaselJS
- * Version: 1.10
+ * Version: 1.20
  * Contact and bug reports : http://kudox.jp/contact or http://twitter.com/u_kudox
  * License : public domain
  **/

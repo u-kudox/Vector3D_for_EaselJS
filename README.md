@@ -11,6 +11,36 @@ Vector3D for EaselJS adds AS3 like Vector3D class to EaselJS.
 	console.log(dotProduct); // -1
 
 
+## Properties
+* length [getter]
+* lengthSquared [getter]
+* w
+* x
+* y
+* z
+
+
+## Methods
+* add
+* angleBetween [static]
+* clone
+* copyFrom
+* crossProduct
+* decrementBy
+* distance [static]
+* dotProduct
+* equals
+* incrementBy
+* nearEquals
+* negate
+* normalize
+* project
+* scaleBy
+* setTo
+* subtract
+* toString
+
+
 ## Resources
 * More information and samples at the [kudox.jp](http://kudox.jp/java-script/createjs-easeljs-vector3d)
 * Read the [AS3 API Documentation](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/geom/Vector3D.html), because API is similar to AS3.
