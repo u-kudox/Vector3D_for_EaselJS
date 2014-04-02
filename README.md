@@ -1,7 +1,7 @@
 # Vector3D for EaselJS
 
 Vector3D for EaselJS adds AS3 like Vector3D class to EaselJS.
-  You can use [Matrix3D for EaselJS](https://github.com/u-kudox/Matrix3D_for_EaselJS) if you want.
+You can use [Matrix3D for EaselJS](https://github.com/u-kudox/Matrix3D_for_EaselJS) if you want.
 
 ## Example
 	var v1 = new createjs.Vector3D(10, 10, 10);
