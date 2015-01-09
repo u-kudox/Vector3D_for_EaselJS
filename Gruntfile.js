@@ -34,6 +34,14 @@ module.exports = function(grunt) {
 					from : /js\/vector3d-.+min\.js/,
 					to : 'js/vector3d-<%= pkg.version %>.min.js'
 				}]
+			},
+			easeljs : {
+				src : ['examples/*.html'],
+				overwrite : true,
+				replacements : [{
+					from : /easeljs-.+min\.js/,
+					to : 'easeljs-0.8.0.min.js'
+				}]
 			}
 		}
 	});

@@ -1,6 +1,6 @@
 /**
  * Vector3D for EaselJS
- * Version: 1.20
+ * Version: 1.3
  * Contact and bug reports : http://kudox.jp/contact or http://twitter.com/u_kudox
  * License : public domain
  **/
@@ -36,11 +36,6 @@ this.createjs = this.createjs || {};
 	};
 
 	p.constructor = Vector3D;
-
-	p.x;
-	p.y;
-	p.z;
-	p.w;
 
 	p.add = function(a) {
 		return new Vector3D(this.x + a.x, this.y + a.y, this.z + a.z);
